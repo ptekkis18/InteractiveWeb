@@ -384,7 +384,7 @@
                     resultsDiv.appendChild(categoryDiv);
                 });
             } else {
-                //Empty Input
+                //Check for Empty Input
                 if (!country){
                     errorMessageDiv.innerHTML = `Sorry, we don't have information for that country yet. Please enter another destination!`;
                     errorMessageDiv.style.display = 'block';
@@ -396,9 +396,9 @@
             }
         }
 
-        // Function to fetch news (for the home section)
+        // Function to fetch news (for home page)
         function fetchNews() {
-            const apiKey = ''; // Replace with your News API key
+            const apiKey = ''; // Replace News API key
             const url = `https://newsapi.org/v2/top-headlines?category=technology&apiKey=${apiKey}`;
             
             fetch(url)
@@ -430,7 +430,7 @@
                 });
         }
 
-        // Listen for hash changes
+        // Listening for hash changes
         window.addEventListener('hashchange', function() {
             loadContent(location.hash);
         });
